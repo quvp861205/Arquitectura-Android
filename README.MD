@@ -6,4 +6,4 @@ Crear cuenta y elegir una tienda free para usarla como servicio rest: http://mya
 ----------------
 
 ![](item_detail.png)
-![](lista_items.png)
+![](list_items.png)
