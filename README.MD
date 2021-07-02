@@ -2,6 +2,7 @@ Crear cuenta y elegir una tienda free para usarla como servicio rest: http://mya
 
 ![](MVC.jpg)
 ![](MVP.jpg)
+![](MVVM.jpg)
 
 ----------------
 
