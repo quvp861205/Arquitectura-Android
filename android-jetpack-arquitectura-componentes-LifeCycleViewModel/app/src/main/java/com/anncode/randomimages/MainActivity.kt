@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,9 +27,15 @@ class MainActivity : AppCompatActivity() {
 
         // con viewmodelproviders persiste los datos a pesar que el estado de la app cambie
         var model = ViewModelProviders.of(this).get(MainActivityViewModel::class.java)
-        Picasso.get().load(model.callUrlImage()).into(imagePhoto)
+        var urlImage : MutableLiveData<String?>?= model.callUrlImage()
 
+        urlImage?.observe(this, Observer {
+            Picasso.get().load(it).into(imagePhoto)
+            Picasso.get().load(it).into(imagePhoto2)
+        })
 
-
+        btnObserver.setOnClickListener {
+            model.randomNumbersUrl()
+        }
     }
 }
