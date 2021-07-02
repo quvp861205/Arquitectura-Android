@@ -38,6 +38,7 @@ class CouponViewModel : ViewModel() {
     fun getCoupounAt(position: Int): Coupon?{
         var coupons: List<Coupon>? = couponObservable.getCoupons().value
         return coupons?.get(position)
+        
     }
 
     companion object {
